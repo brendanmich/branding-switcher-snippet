@@ -1,0 +1,27 @@
+<div class="header animate">
+	<div class="primary-header-footer screen-overall-padding">
+
+		<!-- Logo Holder -->
+		<div class="header-logo-holder">
+			<a href="/">
+				<% if (new Date().getMonth() == 1) { // Black History Month (February) %>
+					<img src="/public/img/logos/logo-black-history.png" alt="My App - Black History Month" title="My App - Black History Month">
+				<% } else if (new Date().getMonth() == 5) { // Pride Month (June) %>
+					<img src="/public/img/logos/logo-pride.png" alt="My App - Happy Pride Month!" title="My App - Happy Pride Month!">
+				<% } else { %>
+					<img src="/public/img/logos/logo.png" alt="My App" title="My App">
+				<% } %>
+			</a>
+		</div>
+
+		<!-- Navigation Container -->
+		<div class="nav-container">
+
+			<!-- About Us -->
+			<a href="/about" class="navigation-link animate">About</a>
+
+			<!-- Contact Us -->
+			<a href="/contact" class="navigation-link animate">Contact Us</a>
+		</div>
+	</div>
+</div>

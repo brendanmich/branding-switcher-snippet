@@ -1,0 +1,61 @@
+{
+	"name": "branding-switcher-snippet",
+	"version": "1.0.0",
+	"scripts": {
+		"lint": "npm-run-all -p lint:code lint:css lint:ejs",
+		"lint:code": "eslint .",
+		"lint:css": "stylelint 'src/**/*.css'",
+		"lint:ejs": "find views -type f -iname '*.ejs' -exec bash -c \"./node_modules/.bin/ejslint '{}'\" \\;",
+		"lint:fix": "eslint --fix .",
+		"format": "npm run prettier -- --write",
+		"prettier": "prettier \"**/*.{html,md,css,scss,yaml,yml}\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/brendanmich/branding-switcher-snippet"
+	},
+	"nodemonConfig": {
+		"ignore": [
+			".git",
+			"config/*",
+			"db/*",
+			"logs/*",
+			"models/*",
+			"src/*",
+			"build/*",
+			"views/*"
+		],
+		"ext": "js,mjs,json,ejs,html,txt"
+	},
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {
+		"ejs-lint": "^1.1.0",
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb-base": "^14.1.0",
+		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-node": "^11.1.0",
+		"husky": "^4.2.5",
+		"lint-staged": "^10.2.2",
+		"nodemon": "^2.0.2",
+		"npm-run-all": "^4.1.5",
+		"prettier": "2.0.5",
+		"rimraf": "^3.0.2",
+		"stylelint": "^13.3.3",
+		"stylelint-config-recommended": "^3.0.0"
+	},
+	"engines": {
+		"node": ">=12.10.0 <14.0.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{html,md,css,scss,yaml,yml}": "prettier --write",
+		"*.js": "eslint --fix",
+		"*.ejs": "ejslint",
+		"*.css": "stylelint"
+	}
+}

@@ -1,0 +1,42 @@
+<!doctype HTML>
+
+<html lang="en">
+	<head>
+
+		<!-- Site Meta -->
+		<title>App Name</title>
+		<meta name="description" content="">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+
+		<!-- Open Graph Meta -->
+		<meta property="og:title" content="App Name"/>
+		<meta property="og:description" content="" />
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="https://www.myapp.com" />
+		<meta property="og:site_name" content="My App"/>
+
+		<!-- Open Graph Cover -->
+		<% if (new Date().getMonth() == 1) { // Black History Month (February) %>
+			<meta property="og:image" content="/public/external/social/social-cover-black-history.png" />
+		<% } else if (new Date().getMonth() == 5) { // Pride Month (June) %>
+			<meta property="og:image" content="/public/external/social/social-cover-pride.png" />
+		<% } else { %>
+			<meta property="og:image" content="/public/external/social/social-cover.png" />
+		<% } %>
+
+		<!-- Favicon -->
+		<% if (new Date().getMonth() == 1) { // Black History Month (February) %>
+			<link rel="shortcut icon" href="/public/img/favicon-black-history.ico" type="image/x-icon">
+			<link rel="icon" href="/public/img/favicon-black-history.ico" type="image/x-icon">
+		<% } else if (new Date().getMonth() == 5) { // Pride Month (June) %>
+			<link rel="shortcut icon" href="/public/img/favicon-pride.ico" type="image/x-icon">
+			<link rel="icon" href="/public/img/favicon-pride.ico" type="image/x-icon">
+		<% } else { %>
+			<link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon">
+			<link rel="icon" href="/public/img/favicon.ico" type="image/x-icon">
+		<% } %>
+	</head>
+
+	<body class="preload"></body>
+</html>
